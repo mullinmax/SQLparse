@@ -3,7 +3,7 @@
         {
             "label": "Build and Run",
             "type": "shell",
-            "command": "git push;ssh maxwell@192.168.1.3 'cd git/SQLparse; git pull; ./.vscode/build; ./.vscode/run'",
+            "command": "git push;ssh maxwell@192.168.1.3 'cd git/SQLparse; git pull; pwd; .vscode/build.sh; .vscode/run.sh'",
             "problemMatcher": []
         }
     ]
