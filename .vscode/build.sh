@@ -1,2 +1,2 @@
 #!/bin/bash
-g++ -Wall -O 3 ../main.cpp -o ../SQLparse 
+g++ -Wall -O3 ../main.cpp -o ../SQLparse 
