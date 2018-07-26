@@ -4,7 +4,10 @@
             "label": "Build and Run",
             "type": "shell",
             "command": "git add .; git commit -m'auto push for test';git push;ssh maxwell@192.168.1.3 'cd git/SQLparse; git pull; pwd; .vscode/build.sh; .vscode/run.sh'",
-            "problemMatcher": []
+            "problemMatcher": [],
+            "presentation": {
+                "echo": false,
+            }
         }
     ]
 }
