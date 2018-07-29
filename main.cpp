@@ -7,15 +7,31 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+    string fileName;
+    int lineNumber = -1;
     cout << argc << endl;
-    if (argc == 0)
+    if (argc == 1)
     {
-    }
-    else if (argc == 1)
-    {
+        cout << "Please provide a file name" << endl;
     }
     else if (argc == 2)
     {
+        fileName = argv[1];
+    }
+    else if (argc == 3)
+    {
+        if (argv[1] == "-l" || argv[1] == "-L")
+        {
+            cout << "please provide line number AND filename" << endl;
+        }
+    }
+    else if (argc == 4)
+    {
+        if (argv[1] == "-l" || argv[1] == "-L")
+        {
+            lineNumber = stoi(argv[2]);
+            fileName = argv[3]
+        }
     }
     else
     {
