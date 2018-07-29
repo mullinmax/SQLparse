@@ -11,6 +11,9 @@ using namespace std;
 void argParse(vector<string> args, string& inFileName, string outFileName, int& lineNumber, int rowLimit)
 {
     for_each(args.begin(), args.end(), [&](string arg) -> void {
+        if (debug) {
+            cout << "parsing argument: " << arg << endl;
+        }
         switch (arg[1]) {
         case 'L':
         case 'l':
@@ -31,9 +34,6 @@ void argParse(vector<string> args, string& inFileName, string outFileName, int& 
         default:
             cout << "Invalid argument: " << arg << endl;
             cout << "Accepted arguments are -L,-I,-O for Line number, Input file and Output file respectivly" << endl;
-        }
-        if (debug) {
-            cout << arg << endl;
         }
     });
     if (inFileName == "") {
