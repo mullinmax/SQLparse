@@ -8,7 +8,7 @@ using namespace std;
 
 void print(string in)
 {
-    cout << in << end;
+    cout << in << endl;
 }
 
 int main(int argc, char *argv[])
