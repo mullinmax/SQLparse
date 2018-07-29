@@ -4,7 +4,7 @@
 #include <vector>
 #include <algorithm>
 
-#define debug true;
+#define debug true
 
 using namespace std;
 
