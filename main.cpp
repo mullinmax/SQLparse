@@ -2,40 +2,26 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
+
+void print(string in)
+{
+    cout << in << end;
+}
 
 int main(int argc, char *argv[])
 {
     string fileName;
     int lineNumber = -1;
     cout << argc << endl;
-    if (argc == 1)
+    vector<string> args;
+    if (argc > 1)
     {
-        cout << "Please provide a file name" << endl;
+        args.assign(argv + 1, argv + argc);
     }
-    else if (argc == 2)
-    {
-        fileName = argv[1];
-    }
-    else if (argc == 3)
-    {
-        if (stoi(argv[1]) == "-l" || stoi(argv[1]) == "-L")
-        {
-            cout << "please provide line number AND filename" << endl;
-        }
-    }
-    else if (argc == 4)
-    {
-        if (stoi(argv[1]) == "-l" || stoi(argv[1]) == "-L")
-        {
-            lineNumber = stoi(argv[2]);
-            fileName = argv[3];
-        }
-    }
-    else
-    {
-    }
+    for_each(args.begin(), args.end(), print);
     return 0;
 }
 
