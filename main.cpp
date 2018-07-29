@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
         if (argv[1] == "-l" || argv[1] == "-L")
         {
             lineNumber = stoi(argv[2]);
-            fileName = argv[3]
+            fileName = argv[3];
         }
     }
     else
