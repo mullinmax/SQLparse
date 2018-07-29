@@ -4,11 +4,16 @@
 #include <vector>
 #include <algorithm>
 
+#define debug = true;
+
 using namespace std;
 
-void print(string in)
+void argParse(string in)
 {
-    cout << in << endl;
+    if (debug)
+    {
+        cout << in << endl;
+    }
 }
 
 int main(int argc, char *argv[])
@@ -21,7 +26,7 @@ int main(int argc, char *argv[])
     {
         args.assign(argv + 1, argv + argc);
     }
-    for_each(args.begin(), args.end(), print);
+    for_each(args.begin(), args.end(), argParse);
     return 0;
 }
 
