@@ -26,7 +26,7 @@ void argParse(vector<string> args, string& inFileName, string outFileName, int& 
             break;
         default:
             cout << "Invalid argument: " << arg << endl;
-            cout << "Accepted arguments are -L,-I,-O for Line number, Input file and Output file respectivly"
+            cout << "Accepted arguments are -L,-I,-O for Line number, Input file and Output file respectivly" << endl;
         }
         if (debug) {
             cout << arg << endl;
