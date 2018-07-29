@@ -1,33 +1,57 @@
-#include <iostream>
+#include <algorithm>
 #include <fstream>
+#include <iostream>
 #include <string>
 #include <vector>
-#include <algorithm>
 
 #define debug true
 
 using namespace std;
 
-void argParse(string in, int &lineNumber)
+void argParse(vector<string> args, string& inFileName, string outFileName, int& lineNumber)
 {
-
-    if (debug)
-    {
-        cout << in << endl;
+    for_each(args.begin(), args.end(), [&](string arg) -> void {
+        switch (arg[1]) {
+        case 'L':
+        case 'l':
+            lineNumber = stoi(arg.substr(3));
+            break;
+        case 'I':
+        case 'i':
+            inFileName = arg.substr(3);
+            break;
+        case 'O':
+        case 'o':
+            outFileName = arg.substr(3);
+            break;
+        default:
+            cout << "Invalid argument: " << arg << endl;
+            cout << "Accepted arguments are -L,-I,-O for Line number, Input file and Output file respectivly"
+        }
+        if (debug) {
+            cout << arg << endl;
+        }
+    });
+    if (inFileName == "") {
+        cout << "Please provide an input filename" << endl;
     }
+    if (outFileName == "") {
+        cout << "Please provide an input filename" << endl;
+    }
+    return;
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
-    string fileName;
+    string inFileName = "";
+    string outFileName = "";
     int lineNumber = -1;
     cout << argc << endl;
     vector<string> args;
-    if (argc > 1)
-    {
+    if (argc > 1) {
         args.assign(argv + 1, argv + argc);
     }
-    for_each(args.begin(), args.end(), argParse(, lineNumber));
+    argParse(args, inFileName, outFileName, lineNumber);
     return 0;
 }
 
@@ -42,16 +66,12 @@ vector<string> read_file(string file_name)
 
     //read
     string temp;
-    if (!fin.fail())
-    {
-        while (!fin.eof())
-        {
+    if (!fin.fail()) {
+        while (!fin.eof()) {
             getline(fin, temp);
             lines.push_back(temp);
         }
-    }
-    else
-    {
+    } else {
         cout << "File failed to open" << endl;
     }
     return lines;
