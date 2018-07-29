@@ -20,14 +20,14 @@ int main(int argc, char *argv[])
     }
     else if (argc == 3)
     {
-        if (argv[1] == "-l" || argv[1] == "-L")
+        if (stoi(argv[1]) == "-l" || stoi(argv[1]) == "-L")
         {
             cout << "please provide line number AND filename" << endl;
         }
     }
     else if (argc == 4)
     {
-        if (argv[1] == "-l" || argv[1] == "-L")
+        if (stoi(argv[1]) == "-l" || stoi(argv[1]) == "-L")
         {
             lineNumber = stoi(argv[2]);
             fileName = argv[3];
