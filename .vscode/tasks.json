@@ -3,7 +3,7 @@
         {
             "label": "Build and Run",
             "type": "shell",
-            "command": ".vscode/autoPush.sh >/dev/null; ssh maxwell@192.168.1.3 'cd git/SQLparse; git pull -q;echo 'Building'; .vscode/build.sh;echo 'Running'; .vscode/run.sh'",
+            "command": ".vscode/autoPush.sh >/dev/null; ssh maxwell@192.168.1.3 'cd git/SQLparse; git pull -q;echo 'Building'; .vscode/build.sh;echo 'Running'; .vscode/test.sh'",
             "problemMatcher": [],
             "presentation": {
                 "echo": false,
