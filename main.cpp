@@ -42,6 +42,12 @@ void argParse(vector<string> args, string& inFileName, string outFileName, int& 
     if (outFileName == "") {
         cout << "Please provide an output filename" << endl;
     }
+    if (debug) {
+        cout << "input file: " << inFileName << endl;
+        cout << "output file: " << outFileName << endl;
+        cout << "line: " << lineNumber << endl;
+        cout << "row limit: " << rowLimit << endl;
+    }
     return;
 }
 
