@@ -43,10 +43,11 @@ void argParse(vector<string> args, string& inFileName, string outFileName, int& 
         cout << "Please provide an output filename" << endl;
     }
     if (debug) {
-        cout << "input file: " << inFileName << endl;
-        cout << "output file: " << outFileName << endl;
-        cout << "line: " << lineNumber << endl;
-        cout << "row limit: " << rowLimit << endl;
+        cout << "Parameters:" << endl;
+        cout << "\tinput file: " << inFileName << endl;
+        cout << "\toutput file: " << outFileName << endl;
+        cout << "\tline: " << lineNumber << endl;
+        cout << "\trow limit: " << rowLimit << endl;
     }
     return;
 }
