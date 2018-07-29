@@ -30,7 +30,7 @@ vector<string> read_file(string file_name)
 
     //initialize
     fstream fin;
-    fin.open(file_name);
+    fin.open(file_name.c_str);
 
     //read
     string temp;
