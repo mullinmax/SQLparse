@@ -8,8 +8,9 @@
 
 using namespace std;
 
-void argParse(string in)
+void argParse(string in, int &lineNumber)
 {
+
     if (debug)
     {
         cout << in << endl;
@@ -26,7 +27,7 @@ int main(int argc, char *argv[])
     {
         args.assign(argv + 1, argv + argc);
     }
-    for_each(args.begin(), args.end(), argParse);
+    for_each(args.begin(), args.end(), argParse(, lineNumber));
     return 0;
 }
 
