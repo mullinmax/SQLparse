@@ -36,7 +36,7 @@ void argParse(vector<string> args, string& inFileName, string outFileName, int& 
         cout << "Please provide an input filename" << endl;
     }
     if (outFileName == "") {
-        cout << "Please provide an input filename" << endl;
+        cout << "Please provide an output filename" << endl;
     }
     return;
 }
