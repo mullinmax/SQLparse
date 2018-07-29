@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void argParse(vector<string> args, string& inFileName, string outFileName, int& lineNumber)
+void argParse(vector<string> args, string& inFileName, string outFileName, int& lineNumber, int rowLimit)
 {
     for_each(args.begin(), args.end(), [&](string arg) -> void {
         switch (arg[1]) {
@@ -23,6 +23,10 @@ void argParse(vector<string> args, string& inFileName, string outFileName, int& 
         case 'O':
         case 'o':
             outFileName = arg.substr(3);
+            break;
+        case 'r':
+        case 'R':
+            rowLimit = stoi(arg.substr(3));
             break;
         default:
             cout << "Invalid argument: " << arg << endl;
@@ -46,12 +50,13 @@ int main(int argc, char* argv[])
     string inFileName = "";
     string outFileName = "";
     int lineNumber = -1;
+    int rowLimit = -1;
     cout << argc << endl;
     vector<string> args;
     if (argc > 1) {
         args.assign(argv + 1, argv + argc);
     }
-    argParse(args, inFileName, outFileName, lineNumber);
+    argParse(args, inFileName, outFileName, lineNumber, rowLimit);
     return 0;
 }
 
